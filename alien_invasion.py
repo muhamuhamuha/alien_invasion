@@ -22,7 +22,7 @@ def run_game():
     while True:
 
         # Watch for keyboard and mouse events
-        gf.check_events()
+        gf.check_events(ship)
         
         # Redraw the screen during each pass through the loop
         # Make the most recently drawn screen visible
