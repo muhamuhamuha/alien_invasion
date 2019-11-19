@@ -8,7 +8,7 @@ import game_functions as gf
 def run_game():
     # Initialize pygame, settings, and screen object
     pygame.init()
-    
+
     ai_settings = Settings()
     screen = pygame.display.set_mode(
         (ai_settings.screen_width, ai_settings.screen_height))
@@ -31,5 +31,11 @@ def run_game():
         ship.update()
         bullets.update()
         gf.update_screen(ai_settings, screen, ship, bullets)
-       
+
+        # Getting rid of bullets that disappear
+        for bullet in bullets.copy():
+            if bullet.rect.bottom <= 0:
+                bullets.remove(bullet)
+        print(len(bullets), end=' ')
+
 run_game()
