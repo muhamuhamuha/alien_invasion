@@ -38,4 +38,4 @@ def run_game():
                 bullets.remove(bullet)
         print(len(bullets), end=' ')
 
-run_game()
+run_game() 
