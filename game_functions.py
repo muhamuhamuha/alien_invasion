@@ -74,7 +74,6 @@ def get_number_rows(ai_settings, ship_height, alien_height):
     number_rows = int(available_space_y / (2 * alien_height))
     return number_rows
 
-
 def get_number_aliens_x(ai_settings, alien_width):
     """Determine the number of aliens that fit in a row."""
     available_space_x = ai_settings.screen_width - 2 * alien_width
@@ -90,6 +89,10 @@ def create_alien(ai_settings, screen, aliens, alien_number, row_number):
     alien.rect.y = alien.rect.height + 2 * alien.rect.height * row_number
     aliens.add(alien)
 
+def update_aliens(aliens):
+    """Update the position of all the aliens in the fleet."""
+    aliens.update()
+    
 def update_screen(ai_settings, screen, ship, aliens, bullets):
     """Update images on the screen and flip to the new screen."""
     # Redraw the screen during each loop pass
